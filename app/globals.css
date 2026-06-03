@@ -25,6 +25,14 @@
   --neon-gradient: linear-gradient(135deg, #8a47e8 0%, #c73b3b 100%);
   --electric-blue-gradient: linear-gradient(135deg, #45a3ff 0%, #6b7fff 100%);
 
+  /* Shadows / glows — consumed by the .blue-glow, .electric-glow, etc. utilities below */
+  --shadow-electric-glow: 0 0 0 1px rgba(69, 163, 255, 0.18), 0 8px 28px -8px rgba(69, 163, 255, 0.35);
+  --shadow-blue-glow: 0 0 0 1px rgba(69, 163, 255, 0.22), 0 10px 30px -10px rgba(69, 163, 255, 0.45);
+  --shadow-neon-glow: 0 0 0 1px rgba(138, 71, 232, 0.25), 0 10px 32px -10px rgba(199, 59, 59, 0.4);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.45), 0 16px 40px -16px rgba(0, 0, 0, 0.7);
+  --shadow-inset-glow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
   /* Updated standard tokens for better contrast ratios */
   --background: var(--background-dark);
   --foreground: var(--text-primary);
@@ -105,6 +113,18 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* DarkLup brand colors — registered so utilities like
+     bg-background-dark, text-electric-primary, text-success, etc. are generated. */
+  --color-background-dark: var(--background-dark);
+  --color-electric-primary: var(--electric-primary);
+  --color-electric-secondary: var(--electric-secondary);
+  --color-accent-blue: var(--accent-blue);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
