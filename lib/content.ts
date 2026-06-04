@@ -20,6 +20,8 @@ export const siteConfig = {
   name: "DarkLup",
   fullName: "DarkLup Design System",
   tagline: "Made with care",
+  devToolsNote:
+    "While working with DevTools to test, the DevTools AI noted that this system\u2019s strength lies in its \u201cStructural Dichotomy\u201d\u2014the clear separation between human-readable design and agent-native context.",
 } as const
 
 /** Sections that appear in the navigation and drive routing. */

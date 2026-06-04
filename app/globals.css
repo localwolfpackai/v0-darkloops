@@ -388,3 +388,60 @@ html {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* ─── Agent Context Card ────────────────────────────────────────────────────
+   Applied to every "FOR THE AGENT" / AgentNote block.
+   The ::before pseudo adds a subtle diagonal hatching texture that visually
+   separates these machine-directed blocks from the human-readable UI.
+   The ::after pseudo injects a "AGENT CONTEXT" badge in the top-right corner.
+   The inner .agent-context-card__content wrapper ensures all children sit
+   above the texture (z-index: 1).
+──────────────────────────────────────────────────────────────────────────── */
+.agent-context-card {
+  position: relative;
+  border: 1px solid rgba(69, 163, 255, 0.4);
+  background-color: rgba(69, 163, 255, 0.05);
+  overflow: hidden;
+  padding-top: 2rem;
+  border-radius: 12px;
+}
+
+/* Diagonal hatching texture */
+.agent-context-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(69, 163, 255, 0.05) 10px,
+    rgba(69, 163, 255, 0.05) 11px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* "AGENT CONTEXT" badge — top-right corner */
+.agent-context-card::after {
+  content: "AGENT CONTEXT";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #45a3ff;
+  color: #0b0b0b;
+  font-size: 9px;
+  padding: 2px 8px;
+  font-weight: 900;
+  border-bottom-left-radius: 8px;
+  z-index: 2;
+  letter-spacing: 0.05em;
+  font-family: "DM Mono", monospace;
+  line-height: 1.6;
+}
+
+/* Push all card children above the texture layer */
+.agent-context-card > * {
+  position: relative;
+  z-index: 1;
+}
