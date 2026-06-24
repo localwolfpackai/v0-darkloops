@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import { Github } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { ComponentShowcase } from "@/components/component-showcase"
@@ -87,7 +88,18 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
             <span>{siteConfig.fullName}</span>
-            <span>{siteConfig.tagline}</span>
+            <div className="flex items-center gap-4">
+              <a
+                href={siteConfig.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-white/40 hover:text-electric-primary transition-colors duration-200"
+              >
+                <Github className="w-4 h-4" aria-hidden="true" />
+                <span>GitHub</span>
+              </a>
+              <span>{siteConfig.tagline}</span>
+            </div>
           </div>
         </div>
       </footer>
