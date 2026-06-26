@@ -101,16 +101,16 @@ export function AgentNote({ section, className }: AgentNoteProps) {
           </h3>
         </div>
 
-        {/* Copy full card button — sits just below the "AGENT CONTEXT" badge */}
+        {/* Copy full card button */}
         <button
           onClick={copyCard}
           aria-label={cardCopied ? "Card content copied" : "Copy this agent context block"}
           title={cardCopied ? "Copied!" : "Copy card"}
           className={cn(
-            "flex h-7 w-7 items-center justify-center rounded-lg border transition-all duration-200 shrink-0 mr-[88px]",
+            "inline-flex items-center gap-1.5 rounded-lg border px-2.5 h-7 text-xs font-mono transition-all duration-200 shrink-0",
             cardCopied
               ? "border-success/40 bg-success/15 text-success"
-              : "border-electric-primary/20 bg-electric-primary/[0.06] text-electric-primary/60 hover:border-electric-primary/40 hover:bg-electric-primary/10 hover:text-electric-primary",
+              : "border-electric-primary/20 bg-electric-primary/[0.06] text-electric-primary/70 hover:border-electric-primary/40 hover:bg-electric-primary/10 hover:text-electric-primary",
           )}
         >
           {cardCopied ? (
@@ -118,6 +118,7 @@ export function AgentNote({ section, className }: AgentNoteProps) {
           ) : (
             <Copy className="h-3.5 w-3.5" aria-hidden="true" />
           )}
+          <span>{cardCopied ? "Copied" : "Copy"}</span>
         </button>
       </div>
 

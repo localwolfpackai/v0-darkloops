@@ -42,32 +42,32 @@ export function HeroSection({ onSectionChange }: HeroSectionProps) {
         </div>
 
         <div className="mx-auto max-w-3xl">
-          {/* Brand mark + eyebrow */}
-          <div className="mb-7 flex flex-col items-center gap-4">
-            <LogoMark className="h-12 w-12 drop-shadow-[0_0_24px_rgba(69,163,255,0.45)]" />
-            <p className="text-sm font-medium tracking-wide text-electric-primary/90">
-              {heroContent.eyebrow}
-            </p>
+          {/* Brand lockup: logo + wordmark sit together as one unit */}
+          <div className="mb-6 inline-flex items-center gap-2.5">
+            <LogoMark className="h-9 w-9 drop-shadow-[0_0_24px_rgba(69,163,255,0.45)]" />
+            <span className="font-display text-xl font-semibold tracking-tight text-white">
+              {heroContent.wordmark}
+            </span>
           </div>
 
-          {/* Bold DarkLup wordmark */}
-          <p className="mb-4 font-display text-2xl font-semibold tracking-tight text-white/90">
-            {heroContent.wordmark}
+          {/* Eyebrow micro-label */}
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-electric-primary/80">
+            {heroContent.eyebrow}
           </p>
 
           <h1
             id="hero-heading"
-            className="mb-5 text-balance font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl"
+            className="mb-5 text-balance font-display text-4xl leading-[1.1] text-white sm:text-5xl lg:text-6xl"
           >
             {heroContent.title}
           </h1>
 
-          <p className="mx-auto mb-8 max-w-2xl text-balance text-lg leading-relaxed text-white/70 sm:text-xl">
+          <p className="mx-auto mb-7 max-w-xl text-balance text-base leading-relaxed text-white/70 sm:text-lg">
             {heroContent.description}
           </p>
 
           {/* Dual-audience line: humans + AI agents */}
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-2.5">
+          <div className="mb-9 flex flex-wrap items-center justify-center gap-2.5">
             <LupoChip variant="electric" size="sm">{heroContent.audienceForHumans}</LupoChip>
             <span aria-hidden="true" className="text-white/30">/</span>
             <LupoChip variant="active" size="sm">{heroContent.audienceForAgents}</LupoChip>

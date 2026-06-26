@@ -87,7 +87,7 @@ export const heroContent = {
   wordmark: "DarkLup",
   title: "A design system your AI agent can actually read",
   description:
-    "DarkLup is a calm, structured interface for people — and a clear surface an AI agent can look at the moment it launches. Documented, predictable, and legible to both.",
+    "A calm, structured interface for people — and a clear surface an AI agent can read the moment it launches.",
   audienceForHumans: "For humans",
   audienceForAgents: "For AI agents",
   primaryCta: { label: "Browse Components", section: "components" as SectionId },
