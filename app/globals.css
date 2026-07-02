@@ -272,6 +272,56 @@
     }
   }
 
+  /* Enhanced effects — used on the Effects showcase preview stages */
+  @keyframes glow-breathe {
+    0%,
+    100% {
+      transform: scale(0.85);
+      opacity: 0.35;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.75;
+    }
+  }
+
+  @keyframes glow-orbit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes circuit-flow {
+    0% {
+      stroke-dashoffset: 220;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes circuit-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes matrix-rain {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 28px;
+    }
+  }
+
   .animate-shimmer {
     animation: shimmer 2.5s ease-in-out infinite;
   }
@@ -284,6 +334,40 @@
 
   .animate-matrix-pulse {
     animation: matrix-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-glow-breathe {
+    animation: glow-breathe 3.5s ease-in-out infinite;
+  }
+
+  .animate-glow-orbit {
+    animation: glow-orbit 8s linear infinite;
+  }
+
+  .animate-circuit-flow {
+    stroke-dasharray: 14 8;
+    animation: circuit-flow 1.6s linear infinite;
+  }
+
+  .animate-circuit-pulse {
+    animation: circuit-pulse 2.4s ease-in-out infinite;
+  }
+
+  .animate-matrix-rain {
+    animation: matrix-rain 1.8s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer,
+    .animate-circuit-draw,
+    .animate-matrix-pulse,
+    .animate-glow-breathe,
+    .animate-glow-orbit,
+    .animate-circuit-flow,
+    .animate-circuit-pulse,
+    .animate-matrix-rain {
+      animation: none;
+    }
   }
 }
 

@@ -19,7 +19,8 @@ import {
 export const siteConfig = {
   name: "DarkLup",
   fullName: "DarkLup Design System",
-  tagline: "Made with care",
+  tagline: "Made by Lupo",
+  githubUrl: "https://github.com/localwolfpackai/v0-darkloops",
   devToolsNote:
     "While working with DevTools to test, the DevTools AI noted that this system\u2019s strength lies in its \u201cStructural Dichotomy\u201d\u2014the clear separation between human-readable design and agent-native context.",
 } as const
@@ -86,7 +87,7 @@ export const heroContent = {
   wordmark: "DarkLup",
   title: "A design system your AI agent can actually read",
   description:
-    "DarkLup is a calm, structured interface for people — and a clear surface an AI agent can look at the moment it launches. Documented, predictable, and legible to both.",
+    "A calm, structured interface for people — and a clear surface an AI agent can read the moment it launches.",
   audienceForHumans: "For humans",
   audienceForAgents: "For AI agents",
   primaryCta: { label: "Browse Components", section: "components" as SectionId },
