@@ -12,6 +12,7 @@ import { PromptLibrary } from "@/components/prompt-library"
 import { AIZone } from "@/components/ai-zone"
 import { CreativeSpace } from "@/components/creative-space"
 import { siteConfig } from "@/lib/content"
+import Link from "next/link"
 
 const VALID_SECTIONS = [
   "overview",
