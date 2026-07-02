@@ -1,26 +1,22 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, ShieldAlert } from "lucide-react"
+import Image from "next/image"
+import { ShieldAlert } from "lucide-react"
 import { LupoCard } from "@/components/lupo-card"
-import { LupoButton } from "@/components/lupo-button"
-import { LogoMark } from "@/components/logo"
+import { Navigation } from "@/components/navigation"
 
 export default function GettingStartedPage() {
-  return (
-    <div className="min-h-screen bg-background-dark py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-      <div className="max-w-[800px] w-full">
-        <div className="mb-8 flex items-center justify-between">
-          <Link href="/">
-            <LupoButton variant="secondary" size="sm">
-              <ArrowLeft className="w-4 h-4" />
-              Back to System
-            </LupoButton>
-          </Link>
-          <LogoMark className="w-8 h-8" />
-        </div>
+  const handleSectionChange = () => {
+    // Empty handler for consistency with Navigation props but no behavior needed for this page
+  }
 
-        <div className="space-y-8">
+  return (
+    <div className="min-h-screen bg-background-dark">
+      <Navigation activeSection="getting-started" onSectionChange={handleSectionChange} />
+
+      <main className="max-w-[1008px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="space-y-12">
           <header className="space-y-4">
             <h1 className="font-display text-4xl font-semibold text-white tracking-tight">
               Getting Started
@@ -30,7 +26,67 @@ export default function GettingStartedPage() {
             </p>
           </header>
 
-          <section aria-labelledby="human-instructions">
+          <section aria-labelledby="screenshots" className="space-y-6">
+            <h2 id="screenshots" className="font-display text-2xl font-medium text-white mb-4">
+              Screenshots
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <LupoCard variant="base" className="space-y-4">
+                <h3 className="text-white font-medium">Web View</h3>
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                  <Image
+                    src="/images/screenshot-web.svg"
+                    alt="Web Screenshot"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </LupoCard>
+              <LupoCard variant="base" className="space-y-4">
+                <h3 className="text-white font-medium">Mobile View</h3>
+                <div className="relative aspect-[375/812] max-h-[400px] w-full max-w-[200px] mx-auto rounded-lg overflow-hidden border border-white/10">
+                  <Image
+                    src="/images/screenshot-mobile.svg"
+                    alt="Mobile Screenshot"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </LupoCard>
+            </div>
+          </section>
+
+          <section aria-labelledby="logos" className="space-y-6">
+            <h2 id="logos" className="font-display text-2xl font-medium text-white mb-4">
+              Logos
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <LupoCard variant="base" className="space-y-4 flex flex-col items-center justify-center p-8">
+                <div className="relative w-full max-w-[200px] aspect-[5/2]">
+                  <Image
+                    src="/logos/logo-primary.svg"
+                    alt="Primary Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-white/60 text-sm mt-4">Primary Logo</p>
+              </LupoCard>
+              <LupoCard variant="base" className="space-y-4 flex flex-col items-center justify-center p-8 bg-electric-primary/5 border-electric-primary/20">
+                <div className="relative w-full max-w-[200px] aspect-[5/2]">
+                  <Image
+                    src="/logos/logo-secondary.svg"
+                    alt="Secondary Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-white/60 text-sm mt-4">Secondary Logo</p>
+              </LupoCard>
+            </div>
+          </section>
+
+          <section aria-labelledby="human-instructions" className="space-y-6">
             <h2 id="human-instructions" className="font-display text-2xl font-medium text-white mb-4">
               For Humans
             </h2>
@@ -44,13 +100,13 @@ export default function GettingStartedPage() {
               <LupoCard variant="base">
                 <h3 className="text-white font-medium mb-2">2. Apply the theme</h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Use the defined color and typography tokens. Never hardcode colors; rely on semantic tokens like <code>bg-background-dark</code> and <code>text-electric-primary</code>.
+                  Use the defined color and typography tokens. Never hardcode colors; rely on semantic tokens like <code className="bg-white/10 px-1 py-0.5 rounded">bg-background-dark</code> and <code className="bg-white/10 px-1 py-0.5 rounded">text-electric-primary</code>.
                 </p>
               </LupoCard>
             </div>
           </section>
 
-          <section aria-labelledby="agent-instructions">
+          <section aria-labelledby="agent-instructions" className="space-y-6">
             <h2 id="agent-instructions" className="font-display text-2xl font-medium text-white mb-4 flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-warning" />
               For AI Agents (Important Directives)
@@ -70,12 +126,12 @@ export default function GettingStartedPage() {
                 </p>
               </div>
               <p className="text-white/60 text-sm leading-relaxed">
-                As an agent, you must rely on the exported JSON structures and documented props for components like <code>LupoButton</code>, <code>LupoCard</code>, and <code>LupoChip</code>. Do not hallucinate variants.
+                As an agent, you must rely on the exported JSON structures and documented props for components like <code className="bg-white/10 px-1 py-0.5 rounded">LupoButton</code>, <code className="bg-white/10 px-1 py-0.5 rounded">LupoCard</code>, and <code className="bg-white/10 px-1 py-0.5 rounded">LupoChip</code>. Do not hallucinate variants.
               </p>
             </LupoCard>
           </section>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
