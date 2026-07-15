@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-background-dark: #0b0b0b;
+}
+
 :root {
   --font-size: 14px;
 

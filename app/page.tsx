@@ -11,6 +11,7 @@ import { PromptLibrary } from "@/components/prompt-library"
 import { AIZone } from "@/components/ai-zone"
 import { CreativeSpace } from "@/components/creative-space"
 import { siteConfig } from "@/lib/content"
+import Link from "next/link"
 
 const VALID_SECTIONS = [
   "overview",
@@ -86,7 +87,15 @@ export default function HomePage() {
             Project Note: {siteConfig.devToolsNote}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
-            <span>{siteConfig.fullName}</span>
+            <div className="flex items-center gap-4">
+              <span>{siteConfig.fullName}</span>
+              <Link href="/getting-started" className="hover:text-white transition-colors">
+                Getting Started
+              </Link>
+              <Link href="/ai-principles" className="hover:text-white transition-colors">
+                AI Principles
+              </Link>
+            </div>
             <span>{siteConfig.tagline}</span>
           </div>
         </div>

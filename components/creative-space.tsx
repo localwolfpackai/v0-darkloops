@@ -3,6 +3,8 @@
 import type React from "react"
 import { useState, useRef, useCallback, useEffect } from "react"
 import { MousePointerClick } from "lucide-react"
+import html2canvas from "html2canvas"
+import { saveAs } from "file-saver"
 import { LupoCard } from "./lupo-card"
 import { LupoButton } from "./lupo-button"
 import { LupoChip } from "./lupo-chip"
@@ -95,6 +97,22 @@ export function CreativeSpace() {
     URL.revokeObjectURL(url)
   }, [elements])
 
+  const exportToPNG = useCallback(async () => {
+    if (!canvasRef.current) return
+    try {
+      const canvas = await html2canvas(canvasRef.current, {
+        backgroundColor: '#0b0b0b',
+      })
+      canvas.toBlob((blob) => {
+        if (blob) {
+          saveAs(blob, 'canvas-export.png')
+        }
+      })
+    } catch (error) {
+      console.error('Failed to export canvas to PNG', error)
+    }
+  }, [])
+
   // Auto-generate ambient elements
   useEffect(() => {
     if (elements.length >= 30) return
@@ -156,7 +174,16 @@ export function CreativeSpace() {
             aria-label="Export as JSON"
             disabled={elements.length === 0}
           >
-            Export
+            Export JSON
+          </LupoButton>
+          <LupoButton
+            variant="primary"
+            size="sm"
+            onClick={exportToPNG}
+            aria-label="Export as PNG"
+            disabled={elements.length === 0}
+          >
+            Export PNG
           </LupoButton>
         </div>
       </div>
