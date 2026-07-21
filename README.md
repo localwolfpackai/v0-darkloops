@@ -1,30 +1,37 @@
-# darkloops-components
+# DarkLoops Components
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A dark-themed **component & motion lab** for Lupo Studios — a living showcase of custom UI
+primitives, type, color, and effect experiments. Built in [v0.app](https://v0.app), deployed on Vercel.
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/lupostudios/v0-darkloops)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/gwXJCrz4WRz)
 
-## Overview
+## What's in here
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Custom components live in `components/` (shadcn/radix primitives in `components/ui/`):
 
-## Deployment
+- **Brand primitives** — `lupo-button`, `lupo-card`, `lupo-chip`, `logo`
+- **Showcases** — `component-showcase`, `typography-showcase`, `effect-showcase`, `color-palette`
+- **Creative surfaces** — `hero-section`, `ai-zone`, `creative-space`, `prompt-library`, `blueprint-tile`, `agent-note`
+- **Chrome** — `navigation`, `section-header`, `theme-provider`
 
-Your project is live at:
+Design reference snapshots (including the hero before/after) live in [`design/`](design/).
 
-**[https://vercel.com/lupostudios/v0-darkloops](https://vercel.com/lupostudios/v0-darkloops)**
+## Stack
 
-## Build your app
+Next.js 14 (App Router) · React 19 · TypeScript · Tailwind v4 · shadcn/radix · next-themes · Vercel Analytics.
 
-Continue building your app on:
+## Develop
 
-**[https://v0.app/chat/gwXJCrz4WRz](https://v0.app/chat/gwXJCrz4WRz)**
+```bash
+pnpm install
+pnpm dev     # http://localhost:3000
+```
 
-## How It Works
+Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## v0 sync
+
+This repo stays in sync with its [v0.app](https://v0.app/chat/gwXJCrz4WRz) project — changes deployed
+from v0 are pushed here automatically, and Vercel deploys the latest. Edit in v0 for synced changes;
+edit here directly for anything v0 doesn't manage (like this README and the `design/` folder).
