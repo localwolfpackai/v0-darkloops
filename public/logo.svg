@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" role="img" aria-label="DarkLup logo">
+  <!-- Standalone export of components/logo.tsx LogoMark with baked brand colors
+       (electric-primary #45a3ff over the #0b0b0b dark surface). -->
+  <rect x="1" y="1" width="30" height="30" rx="8" fill="#142230" stroke="#1c3954" stroke-width="1.5"/>
+  <path d="M21.5 16a7.5 7.5 0 1 1-7.5-7.5 6 6 0 1 0 0 15 7.47 7.47 0 0 0 7.5-7.5Z" fill="#45a3ff"/>
+</svg>

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/logo.svg" alt="DarkLup mark" width="72" height="72" />
+</p>
+
 # DarkLoops Components
 
 A dark-themed **component & motion lab** for Lupo Studios — a living showcase of custom UI
