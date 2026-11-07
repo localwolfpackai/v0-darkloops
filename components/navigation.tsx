@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { Menu, X } from "lucide-react"
+import Link from "next/link"
 import { LupoButton } from "./lupo-button"
 import { LogoMark } from "./logo"
 import { navSections, siteConfig } from "@/lib/content"
@@ -81,6 +82,8 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
             ))}
           </div>
 
+          <Link href="/compare" className="hidden md:inline-flex items-center px-3 py-1.5 text-sm text-white/60 hover:text-electric-primary transition-colors">Compare</Link>
+
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <LupoButton
@@ -124,6 +127,7 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
                   {section.label}
                 </button>
               ))}
+              <Link href="/compare" onClick={() => setIsMenuOpen(false)} className="px-4 py-2.5 text-sm text-white/60 hover:text-white">Compare</Link>
             </div>
           </div>
         )}
