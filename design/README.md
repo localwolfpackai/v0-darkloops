@@ -10,6 +10,8 @@ root stays clean and these read as what they are: a visual record of the design.
 | `cards.png` | Card component variants |
 | `effects.png` | Motion / effect showcase |
 | `footer.png` | Footer layout |
+| `live-desktop.png` | Live site home page on desktop, used in the root README |
+| `live-mobile.png` | Live site home page on a phone, used in the root README |
 
 `hero-now.png` → `hero-after.png` is the redesign before/after — the pair to reach for when this
 project becomes a case study or social post.

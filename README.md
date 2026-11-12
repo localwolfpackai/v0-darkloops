@@ -1,37 +1,62 @@
-# DarkLoops Components
+# DarkLup
 
-A dark-themed **component & motion lab** for Lupo Studios — a living showcase of custom UI
-primitives, type, color, and effect experiments. Built in [v0.app](https://v0.app), deployed on Vercel.
+**A dark, calm design system that people can browse and AI coding agents can read.** Every section of the site carries a plain-text "agent context" block, so an agent building UI with it gets the tokens, variants and rules without guessing.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/lupostudios/v0-darkloops)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/gwXJCrz4WRz)
+**Live site: [v0-darkloops.vercel.app](https://v0-darkloops.vercel.app)**
 
-## What's in here
+| Desktop | Mobile |
+|---------|--------|
+| <img src="design/live-desktop.png" alt="DarkLup home page on desktop: the hero reads 'A design system your AI agent can actually read'" width="620"> | <img src="design/live-mobile.png" alt="DarkLup home page on a phone" width="220"> |
 
-Custom components live in `components/` (shadcn/radix primitives in `components/ui/`):
+## What's on the site
 
-- **Brand primitives** — `lupo-button`, `lupo-card`, `lupo-chip`, `logo`
-- **Showcases** — `component-showcase`, `typography-showcase`, `effect-showcase`, `color-palette`
-- **Creative surfaces** — `hero-section`, `ai-zone`, `creative-space`, `prompt-library`, `blueprint-tile`, `agent-note`
-- **Chrome** — `navigation`, `section-header`, `theme-provider`
+- **Overview**: the hero and the copyable agent context block.
+- **Components, Colors, Typography, Effects**: the working parts of the system, shown live.
+- **Prompts, Assistant, Canvas**: a prompt library and two spaces for trying the system out.
+- **[Compare](https://v0-darkloops.vercel.app/compare)**: DarkLup next to Radix, shadcn and MUI, with the tradeoffs stated honestly.
+- **[Getting started](https://v0-darkloops.vercel.app/getting-started)**: the written guide for people and agents.
 
-Design reference snapshots (including the hero before/after) live in [`design/`](design/).
+## How it was built
 
-## Stack
+Designed and built by Anthony Lupo ([Lupo Studios](https://github.com/localwolfpackai)) with AI as the engineering partner. The first version came out of [v0.app](https://v0.app/chat/gwXJCrz4WRz), then it was reworked by hand and with coding agents. Vercel deploys it on every change to `main`.
 
-Next.js 14 (App Router) · React 19 · TypeScript · Tailwind v4 · shadcn/radix · next-themes · Vercel Analytics.
+- **Framework**: Next.js 14 (App Router), React 19, TypeScript
+- **Styling**: Tailwind v4, with the design tokens as CSS variables in `app/globals.css`
+- **Primitives**: shadcn and Radix in `components/ui/`, brand components (`lupo-button`, `lupo-card`, `lupo-chip`) in `components/`
+- **Hosting**: Vercel, with Vercel Analytics
 
-## Develop
+## Run it
+
+Needs Node 18 or newer and [pnpm](https://pnpm.io).
 
 ```bash
 pnpm install
-pnpm dev     # http://localhost:3000
 ```
 
-Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`.
+```bash
+pnpm dev
+```
 
-## v0 sync
+Then open http://localhost:3000.
 
-This repo stays in sync with its [v0.app](https://v0.app/chat/gwXJCrz4WRz) project — changes deployed
-from v0 are pushed here automatically, and Vercel deploys the latest. Edit in v0 for synced changes;
-edit here directly for anything v0 doesn't manage (like this README and the `design/` folder).
+Checks before pushing:
+
+```bash
+pnpm lint
+```
+
+```bash
+pnpm build
+```
+
+## Where things live
+
+```
+app/            pages: home, /compare, /getting-started
+components/     brand components and the showcase sections
+components/ui/  shadcn and Radix primitives
+lib/            site copy and helpers
+design/         screenshots, including the hero before and after
+```
+
+The repo stays in sync with its v0 project, so changes made in v0 land here automatically. Earlier design snapshots are in [`design/`](design/).
