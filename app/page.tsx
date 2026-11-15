@@ -84,7 +84,7 @@ export default function HomePage() {
       <footer className="border-t border-white/[0.05] mt-16">
         <div className="max-w-[1008px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
           {/* DevTools AI project note */}
-          <p className="text-xs text-white/35 font-mono leading-relaxed mb-6 max-w-2xl text-pretty border-l-2 border-electric-primary/30 pl-4">
+          <p className="mb-16 max-w-2xl rounded-r-md border-l-2 border-[#38bdf8] bg-white/[0.02] px-4 py-3 font-mono text-xs leading-relaxed text-white/45 text-pretty">
             Project Note: {siteConfig.devToolsNote}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">

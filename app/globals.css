@@ -357,6 +357,30 @@
     animation: matrix-rain 1.8s linear infinite;
   }
 
+  @keyframes dot-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.7);
+    }
+  }
+
+  .animate-dot-pulse {
+    animation: dot-pulse 2.4s ease-in-out infinite;
+  }
+
+  /* Effect previews stay calm: ambient loops are paused until the card is hovered or focused. */
+  .effect-card .effect-stage [class*="animate-"] {
+    animation-play-state: paused;
+  }
+
+  .effect-card:hover .effect-stage [class*="animate-"],
+  .effect-card:focus-visible .effect-stage [class*="animate-"] {
+    animation-play-state: running;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-shimmer,
     .animate-circuit-draw,
@@ -365,7 +389,8 @@
     .animate-glow-orbit,
     .animate-circuit-flow,
     .animate-circuit-pulse,
-    .animate-matrix-rain {
+    .animate-matrix-rain,
+    .animate-dot-pulse {
       animation: none;
     }
   }
@@ -517,7 +542,8 @@ html {
   font-size: 9px;
   padding: 2px 8px;
   font-weight: 900;
-  border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 6px;
+  border-top-right-radius: 11px;
   z-index: 2;
   letter-spacing: 0.05em;
   font-family: "DM Mono", monospace;
