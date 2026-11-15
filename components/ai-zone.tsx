@@ -79,7 +79,7 @@ export function AIZone() {
     <div className="space-y-8">
       <SectionHeader {...sectionHeaders.ai} />
 
-      <AgentNote section="ai" className="max-w-2xl mx-auto" />
+      <AgentNote section="ai" />
 
       {/* Chat Interface */}
       <div className="max-w-2xl mx-auto">
