@@ -94,8 +94,7 @@ export function HeroSection({ onSectionChange }: HeroSectionProps) {
         </div>
       </section>
 
-      {/* Agent-directed context */}
-      <AgentNote section="overview" className="mx-auto max-w-3xl" />
+      <AgentNote section="overview" />
 
       {/* Feature Grid */}
       <section aria-labelledby="features-heading">

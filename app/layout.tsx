@@ -5,13 +5,23 @@ import { GeistMono } from "geist/font/mono"
 import { Suspense } from "react"
 import "./globals.css"
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000"
+
+const title = "DarkLup Design System — Calm, Accessible UI Components"
+const description =
+  "A calm, accessible dark design system built for humans and readable by AI agents: tokens, components, and agent context in one place."
+
 export const metadata: Metadata = {
-  title: "DarkLup Design System — Calm, Accessible UI Components",
-  description:
-    "A comprehensive design system featuring electric components, holographic effects, and technical aesthetics for next-generation web applications.",
-  keywords: ["design system", "UI components", "React", "TypeScript", "Tailwind CSS", "futuristic UI"],
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: ["design system", "UI components", "React", "TypeScript", "Tailwind CSS", "AI agents"],
   authors: [{ name: "DarkLup AI Studios" }],
-    generator: 'v0.app'
+  openGraph: { type: "website", siteName: "DarkLup", title, description, url: "/" },
+  twitter: { card: "summary_large_image", title, description },
+  generator: "v0.app",
 }
 
 export const viewport: Viewport = {
